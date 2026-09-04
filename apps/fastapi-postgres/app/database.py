@@ -1,6 +1,4 @@
 import os
-
-import psycopg2
 from psycopg2.pool import ThreadedConnectionPool
 from dotenv import load_dotenv
 
@@ -16,3 +14,9 @@ pool = ThreadedConnectionPool(
     password=os.getenv("DB_PASSWORD"),
     sslmode=os.getenv("DB_SSL_MODE", 'disable')
 )
+
+def get_connection():
+    return pool.getconn()
+
+def release_connection(connection):
+    pool.putconn(connection)
