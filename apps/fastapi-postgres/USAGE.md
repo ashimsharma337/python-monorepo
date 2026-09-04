@@ -68,5 +68,3 @@ Design notes & safety
 - The dynamic query endpoint only accepts a small whitelist of filters and always uses parameterized SQL to prevent SQL injection.
 - A `controllers` layer was added to separate HTTP concerns from business/data logic.
 - Logging is configured in `app/main.py` and used by services/controllers.
-
-If you want additional filters, aggregation options, or a new report, say which fields and I will add them and update tests.
