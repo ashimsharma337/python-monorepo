@@ -16,15 +16,33 @@ A FastAPI application that provides REST APIs for reading data from PostgreSQL.
 ```text
 fastapi-postgres/
 ├── app/
-│   ├── __init__.py
+│   ├── controllers/
+│   │   ├── __init__.py
+│   │   └── reports_controller.py
+│   ├── database.py
 │   ├── main.py
-│   └── routers/
-│       └── __init__.py
+│   ├── models.py
+│   ├── routers/
+│   │   ├── reports.py
+│   │   └── users.py
+│   └── services/
+│       ├── __init__.py
+│       └── report_service.py
+├── scripts/
+│   └── example_client.py
+├── sql/
+│   ├── queries.sql
+│   ├── schema.sql
+│   └── seed.sql
 ├── tests/
+│   └── test_reports.py
+├── .dockerIgnore
 ├── .env.example
 ├── .gitignore
+├── Dockerfile
 ├── requirements.txt
-└── README.md
+├── README.md
+└── USAGE.md
 ```
 
 ## Swagger UI
@@ -39,7 +57,7 @@ fastapi-postgres/
 
 FastAPI Swagger UI is available at:
 ```bash
-http://yourip:8000/docs
+http://127.0.0.1:8000/docs
 ```
 
 It is generated automatically from the FastAPI application and its route definitions.
